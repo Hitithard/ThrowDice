@@ -8,6 +8,10 @@ public class RollManager : MonoBehaviour
 
     public TextMeshProUGUI resultText;      // Assign this to your "Result:" text field in the Unity inspector.
     public TextMeshProUGUI totalText;       // Assign this to your "Total:" text field in the Unity inspector.
+
+    public TextMeshPro resultText2;      // Assign this to your "Result:" text field in the Unity inspector.
+    public TextMeshPro totalText2;       // Assign this to your "Total:" text field in the Unity inspector.
+
     public int totalValue = 0;
     public bool rollRotation = false;
     public bool dragRoll = false;
@@ -22,19 +26,27 @@ public class RollManager : MonoBehaviour
     {
         totalValue = 0;
         totalText.text = ("Total:0");
+        totalText2.text = ("Total:0");
+
     }
     public void Rolling()
     {
         resultText.text = ("Result:?");
+        resultText2.text = ("Result:?");
+
     }
 
     // Update the "Result:" and "Total:" texts based on the roll result
     public void RollResult(int result)
     {
-        resultText.text = ("Result:" + result.ToString()); 
+        resultText.text = ("Result:" + result.ToString());
+        resultText2.text = ("Result:" + result.ToString());
+
 
         totalValue += result;
         totalText.text = ("Total:" + totalValue.ToString());
+        totalText2.text = ("Total:" + totalValue.ToString());
+
 
     }
 
